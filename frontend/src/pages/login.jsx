@@ -35,7 +35,7 @@ export default function Login() {
     setError('');
     try {
       const { error, data } = await supabase.auth.signInWithSSO({
-        domain: 'gmail.com', // Replace with your SSO domain
+        domain: import.meta.env.VITE_SSO_DOMAIN,
       });
       if (error) throw error;
 
